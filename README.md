@@ -1,6 +1,6 @@
 # Cypress POSTGRES
 
-Test sql query to your postgres database in cypres tests
+Test sql query to your postgres database in cypress tests
 
 Use this plugin to query postgres database and use response in cypress tests
 
