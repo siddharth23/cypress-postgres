@@ -5,12 +5,12 @@ Test sql query to your postgres database in cypres tests
 Use this plugin to query postgres database and use response in cypress tests
 
 # Installation
-
+* Run below command in terminal to install the cypress postgres
 ```bash
 npm i -D cypress-postgres
 
 ```
-then open your `cypress/plugins/index.js` file and register a new task
+* Open your `cypress/plugins/index.js` file and register a new task
 ```
 module.exports = on => {
   on("task", {
@@ -22,14 +22,16 @@ module.exports = on => {
 # How to use it
 
 To query postgres database follow below steps-
-
-* Add postgres database connection details in cypress.json file. Details are like-
-"db":{"user": "postgres",
+* Add postgres database connection details in cypress.json file. Details like-
+```
+"db":
+{"user": "postgres",
 "host": "localhost",
 "database": "postgres",
 "password": "*****",
 "port":5432
 }
+```
 
 * Use dbQuery task in your tests to query postgres database like below-
 ```
