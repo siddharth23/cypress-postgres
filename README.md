@@ -9,9 +9,9 @@ Use this plugin to query postgres database and use response in cypress tests
 ```bash
 npm i -D cypress-postgres
 
+```
 then open your `cypress/plugins/index.js` file and register a new task
-
-```javascript
+```
 module.exports = on => {
   on("task", {
     dbQuery: require("cypress-postgres")
@@ -31,7 +31,8 @@ To query postgres database follow below steps-
 "port":5432
 }
 
-```javascript
+* Use dbQuery task in your tests to query postgres database like below-
+```
 cy.task("dbQuery", "your sql query").then(queryResponse => {
   expect(queryResponse).to.equal("[{Your expected query result}]")
 });
