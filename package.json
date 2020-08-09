@@ -1,6 +1,6 @@
 {
-  "name": "cypress-postgres",
-  "version": "1.0.8",
+  "name": "@siddharth23/cypress-postgres",
+  "version": "1.0.0",
   "description": "Query postgres db via Cypress",
   "main": "cypress/plugins/index.js",
   "repository": "https://github.com/siddharth23/cypress-postgres.git",
@@ -30,5 +30,8 @@
   },
   "dependencies": {
     "pg-promise": "10.5.8"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
