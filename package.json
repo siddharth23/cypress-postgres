@@ -1,8 +1,8 @@
 {
   "name": "cypress-postgres",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Query postgres db via Cypress",
-  "main": "src/index.js",
+  "main": "cypress/plugins/index.js",
   "repository": "https://github.com/siddharth23/cypress-postgres.git",
   "author": "Siddharth Kala <siddharth.kala1989@gmail.com>",
   "keywords": [

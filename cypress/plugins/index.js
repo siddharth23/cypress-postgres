@@ -11,20 +11,12 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 const pgp = require('pg-promise')();
-module.exports = (on, config) => {
-  const connection = {
-    user: config.env.dbUser,
-    host: config.env.dbHost,
-    database: config.env.database,
-    password: config.env.dbPassword,
-    port:config.env.dbPort
-  }
+const postgressConfig = require(require('path').resolve('cypress.json'));
+const connection = postgressConfig.db
+const db = pgp(connection);
 
-  const db = pgp(connection);
-  on("task", {
-    dbQuery: function(query)  {
-      return db.any(query)
-    },
-  });
+module.exports =  function(query)  {
+  return db.any(query)
 }
+
 

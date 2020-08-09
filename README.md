@@ -23,17 +23,17 @@ module.exports = on => {
 
 To query postgres database follow below steps-
 
-* Add postgres database connection details in cypress.env.json file. Details are like-
-{"dbUser": "postgres",
-"dbHost": "localhost",
+* Add postgres database connection details in cypress.json file. Details are like-
+"db":{"user": "postgres",
+"host": "localhost",
 "database": "postgres",
-"dbPassword": "*****",
-"dbPort":5432
+"password": "*****",
+"port":5432
 }
 
 ```javascript
 cy.task("dbQuery", "your sql query").then(queryResponse => {
-  expect(queryResponse).to.equal("[x:y]")
+  expect(queryResponse).to.equal("[{Your expected query result}]")
 });
 ```
 
