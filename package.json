@@ -1,6 +1,6 @@
 {
   "name": "@siddharth23/cypress-postgres",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Query postgres db via Cypress",
   "main": "cypress/plugins/index.js",
   "repository": "https://github.com/siddharth23/cypress-postgres.git",

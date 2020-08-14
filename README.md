@@ -13,9 +13,9 @@ npm i -D cypress-postgres
 * Open your `cypress/plugins/index.js` file and register a new task
 ```
 module.exports = on => {
-  on("task", {
-    dbQuery: require("cypress-postgres")
-  });
+    on("task", {
+        dbQuery:(query)=> require("cypress-postgres")(query.query,query.connection)
+    });
 };
 ```
 
@@ -35,7 +35,7 @@ To query postgres database follow below steps-
 
 * Use dbQuery task in your tests to query postgres database like below-
 ```
-cy.task("dbQuery", "your sql query").then(queryResponse => {
+cy.task("dbQuery", {"query":"your sql query"}).then(queryResponse => {
   expect(queryResponse).to.equal("[{Your expected query result}]")
 });
 ```
@@ -51,9 +51,9 @@ let connection={"user": "postgres",
 ```
 * And use this in your test scripts like below-
 ```
-cy.task("dbQuery", "your sql query", connection).then(queryResponse => {
-  expect(queryResponse).to.equal("[{Your expected query result}]")
-});
+  cy.task("dbQuery", {"query":"your sql query","connection":connection}).then(queryResponse => {
+            expect(queryResponse).to.equal("[{Your expected query result}]")
+        });
 ```
 ## Contributors
 
