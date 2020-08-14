@@ -12,10 +12,13 @@
 // the project's config changing)
 const pgp = require('pg-promise')();
 const postgressConfig = require(require('path').resolve('cypress.json'));
-const connection = postgressConfig.db
-const db = pgp(connection);
 
-module.exports =  function(query)  {
+module.exports =  function(query,userDefineConnection)  {
+  let connection = postgressConfig.db
+  if (userDefineConnection!=undefined){
+    connection=userDefineConnection
+  }
+  const db = pgp(connection);
   return db.any(query)
 }
 

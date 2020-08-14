@@ -39,7 +39,22 @@ cy.task("dbQuery", "your sql query").then(queryResponse => {
   expect(queryResponse).to.equal("[{Your expected query result}]")
 });
 ```
-
+* If you need to query multiple database you can also pass the connection from scripts like below-
+* Create connection in your scripts-
+```
+let connection={"user": "postgres",
+"host": "localhost",
+"database": "postgres",
+"password": "*****",
+"port":5432
+}
+```
+* And use this in your test scripts like below-
+```
+cy.task("dbQuery", "your sql query", connection).then(queryResponse => {
+  expect(queryResponse).to.equal("[{Your expected query result}]")
+});
+```
 ## Contributors
 
 
