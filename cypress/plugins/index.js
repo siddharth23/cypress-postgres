@@ -19,7 +19,9 @@ module.exports =  function(query,userDefineConnection)  {
     connection=userDefineConnection
   }
   const db = pgp(connection);
-  return db.any(query)
+  let response = db.any(query);
+  pgp.end();
+  return response;
 }
 
 
