@@ -11,7 +11,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 const pgp = require('pg-promise')();
-const postgressConfig = require(require('path').resolve('cypress.json'));
+const postgressConfig = require(require('path').resolve('cypress.config.js'));
 
 module.exports =  function(query,userDefineConnection)  {
   let connection = postgressConfig.db
